@@ -207,7 +207,7 @@ export default function LoginPage() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="mt-8 text-center text-sm text-gray-600"
         >
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href="/registration-page.tsx" className="font-medium text-blue-600 hover:text-blue-500">
             <motion.span
               whileHover={{ scale: 1.05 }}

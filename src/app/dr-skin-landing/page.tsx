@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram, FaHeart } from 'react-icons/fa'
 import Link from 'next/link'
-import path from 'path'
 
 export default function DrSkinLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -196,7 +195,7 @@ export default function DrSkinLanding() {
             </motion.div>
             <div className="md:w-1/2 text-lg text-[#5A5A5A]">
               <p>
-                Dr. Skin is an AI-driven platform designed to assist users in identifying skin diseases quickly and accurately. Whether you're a patient or a healthcare provider, our tool offers valuable insights and guidance to ensure informed decisions.
+                Dr. Skin is an AI-driven platform designed to assist users in identifying skin diseases quickly and accurately. Whether you&apos;re a patient or a healthcare provider, our tool offers valuable insights and guidance to ensure informed decisions.
               </p>
               <p className="mt-4">
                 With cutting-edge technology and a user-friendly interface, Dr. Skin makes skin health accessible to everyone. Empowering users to understand their skin conditions is our mission.
@@ -217,9 +216,9 @@ export default function DrSkinLanding() {
               <div key={testimonial.name} className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="font-semibold text-lg">{testimonial.name}</h3>
                 <p className="text-sm text-gray-600">{testimonial.role}</p>
-                <p className="mt-4 text-gray-800 italic">"{testimonial.review}"</p>
+                <p className="mt-4 text-gray-800 italic">&quot;{testimonial.review}&quot;</p>
                 <p className="mt-2 text-yellow-500">
-                  Rating: {Array.from({ length: testimonial.rating }, (_, i) => '⭐')}
+                  Rating: {Array.from({ length: testimonial.rating }, () => '⭐')}
                 </p>
               </div>
             ))}

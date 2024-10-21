@@ -78,7 +78,7 @@ export default function LoginPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="pl-10 w-full p-3 border border-gray-300 text-gray-500 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Enter your email"
                 required
               />
@@ -100,7 +100,7 @@ export default function LoginPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="pl-10 pr-10 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="pl-10 pr-10 w-full p-3 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Enter your password"
                 required
               />
@@ -126,7 +126,7 @@ export default function LoginPage() {
                 id="remember-me"
                 checked={rememberMe}
                 onChange={() => setRememberMe(!rememberMe)}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 text-gray-500 rounded"
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                 Remember me
@@ -169,7 +169,7 @@ export default function LoginPage() {
         >
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300"></div>
+              <div className="w-full border-t border-gray-300 text-gray-500"></div>
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-2 bg-white text-gray-500">Or continue with</span>
@@ -180,7 +180,7 @@ export default function LoginPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 text-gray-500 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
               onClick={() => router.push('/auth/facebook')} // Use router.push
             >
               <Facebook size={20} />
@@ -188,7 +188,7 @@ export default function LoginPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 text-gray-500 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
               onClick={() => router.push('/auth/twitter')} // Use router.push
             >
               <Twitter size={20} />
@@ -196,7 +196,7 @@ export default function LoginPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 text-gray-500 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
               onClick={() => router.push('/auth/github')} // Use router.push
             >
               <Github size={20} />
@@ -210,7 +210,7 @@ export default function LoginPage() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="mt-8 text-center text-sm text-gray-600"
         >
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href="/registration-page" className="font-medium text-blue-600 hover:text-blue-500">
             <motion.span
               whileHover={{ scale: 1.05 }}

@@ -75,7 +75,7 @@ export default function LoginPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="pl-10 w-full p-3 border border-gray-300 placeholder:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Enter your email"
                 required
               />
@@ -97,7 +97,7 @@ export default function LoginPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="pl-10 pr-10 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="pl-10 pr-10 w-full p-3 border border-gray-300 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Enter your password"
                 required
               />
@@ -207,7 +207,7 @@ export default function LoginPage() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="mt-8 text-center text-sm text-gray-600"
         >
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href="/registration-page.tsx" className="font-medium text-blue-600 hover:text-blue-500">
             <motion.span
               whileHover={{ scale: 1.05 }}
