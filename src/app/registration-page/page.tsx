@@ -49,7 +49,7 @@ export default function RegistrationPage() {
       setIsLoading(false)
       setTimeout(() => {
         // Redirect to dashboard (replace with actual routing logic)
-        window.location.href = '/dashboard'
+        window.location.href = '/dr-skin-landing'
       }, 2000)
     }, 2000)
   }
