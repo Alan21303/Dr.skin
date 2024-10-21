@@ -1,9 +1,10 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Camera, Upload, Info, ChevronDown, ChevronUp, Facebook, Twitter, Instagram } from 'lucide-react'
-import Link from 'next/link'
+import { Camera, Info, ChevronDown, ChevronUp, Facebook, Twitter, Instagram } from 'lucide-react'
 
 export default function SkinDiseaseInterface() {
   const [file, setFile] = useState<File | null>(null)
@@ -22,6 +23,7 @@ export default function SkinDiseaseInterface() {
   }
 
   const analyzeImage = (file: File) => {
+    if (!file) return
     setIsAnalyzing(true)
     // Simulating image analysis
     setTimeout(() => {
@@ -101,7 +103,7 @@ export default function SkinDiseaseInterface() {
           <p className="text-sm text-gray-500 mt-2">Supported formats: JPG, PNG. Max size: 5MB.</p>
           {file && (
             <div className="mt-4">
-              <img src={URL.createObjectURL(file)} alt="Uploaded skin" className="max-w-xs mx-auto rounded-lg shadow-md" />
+              <Image src={URL.createObjectURL(file)} alt="Uploaded skin" className="max-w-xs mx-auto rounded-lg shadow-md" />
               <button
                 className="mt-2 text-red-500 hover:text-red-700 transition-colors"
                 onClick={() => setFile(null)}
@@ -143,7 +145,7 @@ export default function SkinDiseaseInterface() {
               className="mt-8"
             >
               <h2 className="text-2xl font-bold text-blue-900 mb-2">Predicted Disease</h2>
-              <p className="text-gray-600 mb-4">Here's the result based on your uploaded image.</p>
+              <p className="text-gray-600 mb-4">Here&apos;s the result based on your uploaded image.</p>
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-xl font-bold text-blue-900 mb-4">{prediction.disease}</h3>
                 <motion.button

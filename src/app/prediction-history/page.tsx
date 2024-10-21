@@ -1,9 +1,10 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronRight, ZoomIn } from 'lucide-react'
-import Link from 'next/link'
 
 // Mock data for predictions
 const mockPredictions = [
@@ -15,16 +16,24 @@ const mockPredictions = [
 ]
 
 export default function PredictionHistory() {
-  const [predictions, setPredictions] = useState([])
+  interface Prediction {
+    id: number;
+    disease: string;
+    date: string;
+    description: string;
+    image: string;
+  }
+
+  const [predictions, setPredictions] = useState<Prediction[]>([])
   const [loading, setLoading] = useState(true)
-  const [selectedPrediction, setSelectedPrediction] = useState(null)
+  const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null)
   const [showImageModal, setShowImageModal] = useState(false)
 
   useEffect(() => {
     // Simulate API call to fetch predictions
     setTimeout(() => {
-      setPredictions(mockPredictions)
-      setLoading(false)
+      setPredictions(mockPredictions);
+      setLoading(false);
     }, 1500)
   }, [])
 
@@ -95,7 +104,9 @@ export default function PredictionHistory() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                   className="bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow"
-                  onClick={() => setSelectedPrediction(prediction)}
+                  onClick={() => setSelectedPrediction(
+                    prediction
+                  )}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -151,7 +162,7 @@ export default function PredictionHistory() {
                   <div className="md:w-1/2">
                     <h4 className="text-lg font-semibold text-gray-800 mb-2">Uploaded Image</h4>
                     <div className="relative">
-                      <img
+                      <Image
                         src={selectedPrediction.image}
                         alt={selectedPrediction.disease}
                         className="w-full h-auto rounded-lg shadow-md"
@@ -188,7 +199,7 @@ export default function PredictionHistory() {
                 className="relative"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
+                <Image
                   src={selectedPrediction.image}
                   alt={selectedPrediction.disease}
                   className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"

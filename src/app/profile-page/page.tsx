@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { User, Camera, Upload, CheckCircle, AlertCircle, Home, Image, ChevronRight, FileText, Calendar, Clock } from 'lucide-react'
-import Link from 'next/link'
+import { User, Camera, CheckCircle, AlertCircle, Calendar, Clock } from 'lucide-react'
 
 export default function ProfilePage() {
   const [profileImage, setProfileImage] = useState<string | null>(null)
@@ -113,7 +115,7 @@ export default function ProfilePage() {
               whileHover={{ scale: 1.05 }}
             >
               {profileImage ? (
-                <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+                <Image src={profileImage} alt="Profile" className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                   <User size={64} className="text-gray-400" />
