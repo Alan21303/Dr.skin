@@ -243,7 +243,7 @@ export default function DrSkinLanding() {
             </div>
             <div className="text-center md:text-right">
               <p className="mb-2">Developed by the Dr. Skin Team</p>
-              <p>Computer Science Department, Medical University</p>
+              <p>Computer Science Department, Sahrdaya College of Engineering and Technology (Autonomous) </p>
             </div>
           </div>
           <div className="mt-8 flex justify-center space-x-4">
