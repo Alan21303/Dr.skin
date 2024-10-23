@@ -90,7 +90,7 @@ export default function RegistrationPage() {
                 First Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-1000" size={18} />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black-1000" size={18} />
                 <input
                   type="text"
                   id="firstName"
