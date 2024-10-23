@@ -36,7 +36,7 @@ export default function DrSkinLanding() {
     { name: 'History', path: '/prediction-history' },
     { name: 'Testimony', path: '#testimonials' }, // Updated to anchor link
     { name: 'User Profile', path: '/profile-page' },
-    { name: 'Login/Register', path: '/login-page' }
+    { name: 'Logout', path: '/login-page' }
   ];
 
   return (
