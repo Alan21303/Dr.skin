@@ -105,6 +105,29 @@ export default function DrSkinLanding() {
             </button>
           </div>
         </div>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+  <div className="absolute top-16 left-0 right-0 bg-white shadow-lg z-50">
+    <div className="flex flex-col p-4">
+      {navLinks.map(({ name, path }) => (
+        <Link key={name} href={path} passHref>
+          <motion.div
+            className="text-[#5A5A5A] hover:text-[#2E8BC0] transition-colors duration-300 relative cursor-pointer py-2"
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setIsMenuOpen(false)} // Close menu on link click
+          >
+            {name}
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2E8BC0]"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
       </motion.nav>
 
       {/* Hero Section */}
